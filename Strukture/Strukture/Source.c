@@ -1,13 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
-#define MAX_FILE_NAME 256
-#define MAX_LINE_LENGHT 1024
-#define FILE_ERROR -1
-#define REROUTE 2
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#define MAX_FILE_NAME 256
+#define MAX_LINE_LENGHT 1024
+#define FILE_ERROR -1
+#define REROUTE 2
 
 
 int OpenStudentFolder(char[]);	/*Opening student folder*/
