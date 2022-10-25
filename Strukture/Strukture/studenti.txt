@@ -1,0 +1,7 @@
+ivo ivic 40
+ana anic 40
+marko markovic 30
+mate matic 0
+pero peric 10
+ira iric 15
+anita anitovic 5

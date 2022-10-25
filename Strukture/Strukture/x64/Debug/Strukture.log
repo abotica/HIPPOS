@@ -1,0 +1,12 @@
+﻿  Source.c
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(39,2): warning C4013: 'gets' undefined; assuming extern returning int
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(102,6): warning C4101: 'i': unreferenced local variable
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(139,34): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(139,65): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(144,39): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(144,70): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(150,38): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(150,69): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(155,38): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\Strukture\Source.c(155,69): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+  Strukture.vcxproj -> C:\Users\boteb\OneDrive\Radna površina\Documents\PROJECTS\Strukture\x64\Debug\Strukture.exe
