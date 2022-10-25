@@ -1,0 +1,12 @@
+﻿  Source.c
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(112,46): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(169,1): warning C4047: 'initializing': 'char' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(234,35): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(234,65): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(238,39): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(238,68): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(242,40): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(242,70): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(246,39): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+C:\Users\User\Documents\vezane liste\vezane liste\Source.c(246,68): warning C4047: '==': 'int' differs in levels of indirection from 'void *'
+  vezane liste.vcxproj -> C:\Users\User\Documents\vezane liste\x64\Debug\vezane liste.exe
