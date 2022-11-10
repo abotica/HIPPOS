@@ -86,20 +86,25 @@ int read_from_file(Position p1, Position p2)
         printf("\nUnable to open file %s !\n", dat);
         return EXIT_FAILURE;
     }
+    
     fgets(row, MAX, fp); //UPISIVANJE U PRVU LISTU
     status = input_list(p1, row);
+    
     if (status != EXIT_SUCCESS)
     {
         printf("\nError --> first polynomial list input! \n\n");
         return -5;
     }
+    
     fgets(row, MAX, fp); //UPISIVANJE U DRUGU LISTU
     status = input_list(p2, row);
+    
     if (status != EXIT_SUCCESS)
     {
         printf("\nError --> second polynomial list input! \n\n");
         return -5;
     }
+    
     fclose(fp);
 
     return EXIT_SUCCESS;
@@ -113,6 +118,7 @@ int input_list(Position head, char* row)
     int status = 2;
     char* H = row;
     Position new_el = NULL;
+    
     while (strlen(H) > 0)
     {
         status = sscanf(H, " %d %d %n", &koef_temp, &ekspo_temp, &bytes);
@@ -120,12 +126,15 @@ int input_list(Position head, char* row)
         {
             return EXIT_FAILURE;
         }
+        
         new_el = (Position)malloc(sizeof(Pol));
+        
         if (!new_el)
         {
             perror("\nMemory allocation failed!\n");
             return EXIT_FAILURE;
         }
+        
         new_el->exp = ekspo_temp;
         new_el->koef = koef_temp;
         new_el->next = head->next;
@@ -140,6 +149,7 @@ int sort_list(Position head)
 {
     Position i = NULL, j = NULL, prev_j = NULL, H = NULL, end = NULL;
     i = head;
+    
     while (i->next != end)
     {
         prev_j = i;
@@ -168,6 +178,7 @@ int print_pol(Position first)
     Position H = NULL;
     H = first;
     int counter = 0;
+    
     do
     {
         if (counter != 0)
@@ -189,6 +200,7 @@ int print_pol(Position first)
         {
             printf("%dx^(%d)", abs(H->koef), H->exp);
         }
+        
         H = H->next;
         counter++;
     } while (H != NULL);
