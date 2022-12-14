@@ -5,41 +5,24 @@
 #include <string.h>
 #include "stog.h"
 #include "stablo.h"
+#include "menu.h"
 
-int menu(void);
 
 int main()
 {
-	printf("HIPPO Windows [Version 1.0]\n(c) Hippopotamus Corporation. No rights whatsoever.\n");
+	position head = (position)malloc(sizeof(stack));
+	tree_p current_dir = make_root();	//is root here
+	tree_p root_address = current_dir;
+	create_root(head, root_address);
 
-	make_root();
-	
+	if (NULL == head) {
+		perror("Error while allocating memory!\n");
+		return 1;
+	}
 
+	printf("HIPPO Windows [Version 1.69]\n(c) Hippopotamus Corporation. No rights whatsoever.\n\n");
 
-
-
-
-
-
-
-
-
-
-	return 0;
-}
-
-int menu() {
-	/*do
-	{
-		
-
-
-
-	} while (true);*/
-
-
-
-
+	menu(head, current_dir, root_address);
 
 	return 0;
 }

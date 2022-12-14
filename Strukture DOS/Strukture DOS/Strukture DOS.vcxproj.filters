@@ -24,12 +24,24 @@
     <ClCompile Include="stog.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stablo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="struktura_stablo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="struktura_stog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,4 +1,3 @@
-﻿  main.c
-  stablo.c
-  Generating Code...
+﻿  stablo.c
+C:\Users\boteb\source\repos\Strukture DOS\Strukture DOS\stablo.c(150,27): warning C4020: 'push': too many actual parameters
   Strukture DOS.vcxproj -> C:\Users\boteb\source\repos\Strukture DOS\x64\Debug\Strukture DOS.exe

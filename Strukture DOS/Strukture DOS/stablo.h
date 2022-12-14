@@ -1,26 +1,14 @@
 #ifndef STABLO_H
 #define STABLO_H
+
 #define MAX_FILE_NAME 256
+#include "stog.h"
+#include "struktura_stablo.h"
+#include "struktura_stog.h"
 
-
-struct tree;
-typedef struct tree* tree_p;
-
-typedef struct tree {
-
-	char directory[MAX_FILE_NAME];
-	tree_p siblings;
-	tree_p children;
-
-}tree;
-
-int make_root();
-int make_dir(tree_p current_dir);
-
-
-
-
-
-
+tree_p make_root(void);
+int make_dir(tree_p);
+int print_directories(tree_p);
+tree_p change_dir(tree_p, position, tree_p);
 
 #endif // !STABLO_H

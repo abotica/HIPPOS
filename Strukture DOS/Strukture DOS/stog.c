@@ -6,28 +6,34 @@
 #include <stdlib.h>
 #include <string.h>
 
-int create_head() {
-	position head = (position)malloc(sizeof(stack));
-
-	if (NULL == head) {
+int create_root(position head, tree_p root_address) {
+	
+	position root_el = (position)malloc(sizeof(stack));
+	
+	if (NULL == root_el) {
 		perror("Error while allocating memory!\n");
 		return 1;
 	}
 
-	head->dir_address = NULL;
-	head->next = NULL;
+	root_el->next = NULL;
+	root_el->dir_address = root_address;
 
+	head->dir_address = NULL;
+	head->next = root_el;
+
+	
 	return 0;
 }
 
-int push(tree_p added_dir_ad, position head) {
+int push(tree_p prev_directory, position head) {
 	position q = (position)malloc(sizeof(stack));
+
 	if (NULL == q) {
 		perror("Error while allocating memory!\n");
 		return 1;
 	}
 
-	q->dir_address = added_dir_ad;	/*added_dir_ad is address of added element of tree*/
+	q->dir_address = prev_directory;	//prev_directory is address of previous directory before changing directories
 
 	q->next = head->next;
 	head->next = q;
@@ -35,16 +41,16 @@ int push(tree_p added_dir_ad, position head) {
 	return 0;
 }
 
-tree_p pop(position head) {
+tree_p pop(position head, tree_p root_address) {
 
-	tree_p address = NULL;
+	tree_p dir_address = NULL;
 	position temp = head->next;
+	
+	if (temp->dir_address == root_address) return root_address;	
 
-	if (temp != NULL)	address = temp->dir_address;
-
+	dir_address = temp->dir_address;
 	head->next = temp->next;
-
 	free(temp);
 
-	return address;
+	return dir_address;	//address of dir
 }
