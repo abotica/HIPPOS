@@ -38,8 +38,8 @@ public:
     Razlomak& operator=(Razlomak& other);
 };
 
-//operator > optereæujemo kao vanjsku funkciju
-//moemo ga preopteretiti kao vanjsku ali i kao èlansku funkciju
+//operator > optereÄ‡ujemo kao vanjsku funkciju
+//moÅ¾emo ga preopteretiti kao vanjsku ali i kao Älansku funkciju
 bool operator>(Razlomak& left, Razlomak& right) {
     double l, r;
     l = left.m_brojnik / left.GetNazivnik();
@@ -51,18 +51,18 @@ bool operator>(Razlomak& left, Razlomak& right) {
         return false;
 }
 
-//operator za èitanje sa toka
+//operator za Äitanje sa toka
 //prima jedan tok za ulazni tok i refernecu na objekt, a vraca ulazni tok
 istream& operator>>(istream& istr, Razlomak& me) {
 
     int b, n;
 
-    //èitanje brojnik i nazivnik
+    //Äitanje brojnik i nazivnik
     istr >> b >> n;
     if (istr) {
         me.m_brojnik = b;
-        //provjera nazivnika je veæ napisana u SetNazivnik() pa je zato samo pozivamo
-        me.SetNazivnik(n);  //ovaj n je prosljeğen u f-ju kao 'naz' te se provjerava je li nazivnik nula 
+        //provjera nazivnika je veÄ‡ napisana u SetNazivnik() pa je zato samo pozivamo
+        me.SetNazivnik(n);  //ovaj n je prosljeÄ‘en u f-ju kao 'naz' te se provjerava je li nazivnik nula 
     }
 
     return istr;
@@ -70,19 +70,19 @@ istream& operator>>(istream& istr, Razlomak& me) {
 
 Razlomak& Razlomak::operator=(Razlomak& other) {
     //operator this kao kopirni konstruktor
-    //on iz ovoga što šaljemo preuzima i upisuje u sebe
-    //on još mora vratiti (de)referencirani pokazivaè na samog sebe tako da se moe nadovezivati na operator =
+    //on iz ovoga Å¡to Å¡aljemo preuzima i upisuje u sebe
+    //on joÅ¡ mora vratiti (de)referencirani pokazivaÄ na samog sebe tako da se moÅ¾e nadovezivati na operator =
     m_brojnik = other.m_brojnik;
     m_nazivnik = other.m_nazivnik;
 
-    //operator = nam je èlan klase stoga moemo dirati privatne varijable, a da nije motali bi koristiti set i get funkcije
+    //operator = nam je Älan klase stoga moÅ¾emo dirati privatne varijable, a da nije motali bi koristiti set i get funkcije
 
     return *this;
 }
 
 int main() {
 
-    //dinamièka alokacija ovako...  ili kao niz od dva elementa
+    //dinamiÄka alokacija ovako...  ili kao niz od dva elementa
     Razlomak* a = new Razlomak;
     Razlomak* b = new Razlomak;
 
@@ -105,11 +105,11 @@ int main() {
 // {2.} ZADATAK:
 //
 //
-// Tekstualna datoteka "ulaz.num" sadri cijele brojeve. Napisite program 
+// Tekstualna datoteka "ulaz.num" sadrÅ¾i cijele brojeve. Napisite program 
 // kojim se citaju svi brojevi iz ulazne datoteke, te se u drugu tekstualnu
 // datoteku imena "poz.num" ispisuju svi pozitivni brojevi iz prve datoteke.
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
 // ukljucite potrebne biblioteke...
 
@@ -124,15 +124,15 @@ int main() {
 
     //otvaramo
     ifstream ifs("ulaz.num");
-    //ono što æemo pisati
-    //ako je zadano da se dodaje ukljuèujemo append!
+    //ono Å¡to Ä‡emo pisati
+    //ako je zadano da se dodaje ukljuÄujemo append!
     ofstream ofs("poz.num", ios::app);
 
     double d;
 
-    //proèitamo iz ulaznog toka varijablu i onda nam na tom mjestu ostaje ifs - ulazni tok; ako je true sve ok, a ako je false dosli smo do kraja datoteke
+    //proÄitamo iz ulaznog toka varijablu i onda nam na tom mjestu ostaje ifs - ulazni tok; ako je true sve ok, a ako je false dosli smo do kraja datoteke
     while (ifs >> d) {
-        if (d >= 0) {           //moe i samo >
+        if (d >= 0) {           //moÅ¾e i samo >
             ofs << d << endl;
         }
     }
@@ -159,7 +159,7 @@ int main() {
 //  a)	konstruktor, kojim se dodatne varijable inicijaliziraju na nulu
 //  b)	operator !=
 //  c)	operator >>
-// U main funkciji napišite primjer korištenja klase Point4D.
+// U main funkciji napiÅ¡ite primjer koriÅ¡tenja klase Point4D.
 //
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 // Ne mijenjajte nista iznad ove linije!
@@ -184,13 +184,13 @@ class Point4D : public Point2D {
         double Get_t() { return m_t; }
         void Set_t(double temp) { if (temp >= 0) m_t = temp; }
 
-        //konstruktori se izvode po liniji nasljeğivanja -> prvo konstruktor temeljne, a onda konstruktor nasljeğene
-        //U konstruktoru nasljeğene klase treba napisati samo dodatne varijable
+        //konstruktori se izvode po liniji nasljeÄ‘ivanja -> prvo konstruktor temeljne, a onda konstruktor nasljeÄ‘ene
+        //U konstruktoru nasljeÄ‘ene klase treba napisati samo dodatne varijable
         Point4D() { m_z = m_t = 0.0; }
 };
 
 
-//operator nije jednako radimo kao vanjsku funkciju i vraæa bool
+//operator nije jednako radimo kao vanjsku funkciju i vraÄ‡a bool
 bool operator!=(Point4D & left, Point4D & right) {
 
     //ako nije jednako treba vratiti true, a nije jednako ako bilo koji od clanskih varijabli nije jednak
@@ -200,14 +200,14 @@ bool operator!=(Point4D & left, Point4D & right) {
         return true;
     if (left.m_z != right.m_z)
         return true;
-    if (left.Get_t() != right.Get_t())   //ne moemo direktno stavit m_t jer samo u vanjskoj funkciji (nije èlanska)
+    if (left.Get_t() != right.Get_t())   //ne moÅ¾emo direktno stavit m_t jer samo u vanjskoj funkciji (nije Älanska)
         return true;
     return false;
 }
 
-//operator za èitanje -> prima dvije referencu 
+//operator za Äitanje -> prima dvije referencu 
 istream& operator >>(istream& istr, Point4D& me) {
-    double a, b, c, d;   //privremene varijable koje èitamo
+    double a, b, c, d;   //privremene varijable koje Äitamo
 
     if (istr >> a >> b >> c >> d) {
         me.m_x = a;
@@ -221,7 +221,7 @@ istream& operator >>(istream& istr, Point4D& me) {
 int main() {
     Point4D a, b;
 
-    cout << (a != b) << endl;  //oboje su na poèetku nula, što znaèi da su jednaki (false) ispisuje se nula
+    cout << (a != b) << endl;  //oboje su na poÄetku nula, Å¡to znaÄi da su jednaki (false) ispisuje se nula
     cin >> a;
     cout << (a != b) << endl;
 
@@ -261,12 +261,12 @@ int main() {
 using namespace std;
 
 //template <class T> void Vece(list<T>& L, T prag)
-//neæe više zadavat ovako nego:
+//neÄ‡e viÅ¡e zadavat ovako nego:
 template <class T> list<T> Vece(list<T>, T prag) {
 
     list<T> ret;  //nova lista
 
-    for (auto it : L) {     //šetamo sa 'it' kroz listu 'L'
+    for (auto it : L) {     //Å¡etamo sa 'it' kroz listu 'L'
         if (it >= prag) {   //ako vrijedi to trebamo dodati u neku novu listu
             ret.push_back(it);
         }
@@ -278,7 +278,7 @@ template <class T> list<T> Vece(list<T>, T prag) {
 int main() {
 
     list<double> lst{ 1.0, 3.2, 5.4, 7.8 };
-    list<double> r;                             //povratna lista koja je prazna na poèetku
+    list<double> r;                             //povratna lista koja je prazna na poÄetku
 
     r = Vece(lst, 4.0);
 
@@ -316,9 +316,9 @@ using namespace std;
 bool FindInt(const list<int>& L, int i) {
 
     //agloritmi funkcioniraju tako da damo neki raspon unutar kojeg radimo i jos neke dodatne argumente koji su potrebni za taj algoritam
-    //sort() -> samo raspon ; find() -> raspon i argumenti(ono što se trai)
+    //sort() -> samo raspon ; find() -> raspon i argumenti(ono Å¡to se traÅ¾i)
     
-    if (find(L.begin(), L.end(), i) == L.end())      //ako je ono što nades(vratis) L.end(); ako se ne nade vraca end(); a ako nade vraca ono što nade
+    if (find(L.begin(), L.end(), i) == L.end())      //ako je ono Å¡to nades(vratis) L.end(); ako se ne nade vraca end(); a ako nade vraca ono Å¡to nade
         return false;                               //jer nije nista nasa odnosno vraca end()
     else
         return true;                                    
@@ -350,7 +350,7 @@ int main() {
 // U izlaznu tekstualnu datoteku imena "kor.txt" datoteku zapisite
 // vrijednosti drugog korijena svih pozitivnih brojeva iz ulazne datoteke.
 // 
-// NAPOMENA: Funkcija za vağenje drugog korijena sqrt je dio biblioteke <cmath>
+// NAPOMENA: Funkcija za vaÄ‘enje drugog korijena sqrt je dio biblioteke <cmath>
 // 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 // Ne mijenjajte nista iznad ove linije!
@@ -391,13 +391,13 @@ int main() {
 // - set/get funkcije za ocjenu (u rasponu od 1 do 5)
 // - operator == koji vraca istinu ako dva ucenika imaju isto ime o oste ocjene 
 //   (operator neka bude vanjska friend funkcija tipa bool, sa dva argumenta tipa klase CUcenik)
-// - operator >> koji sa toka èita najprije ime, a potom ocjenu 
+// - operator >> koji sa toka Äita najprije ime, a potom ocjenu 
 //   (operator neka bude vanjska friend funkcija tipa ulaznog toka,
-//    sa prvim argumentom objektom ulaznog toka sa kojeg se èita,
-//    te drugim argumentom objektom klase CUcenik u koju se èita)
+//    sa prvim argumentom objektom ulaznog toka sa kojeg se Äita,
+//    te drugim argumentom objektom klase CUcenik u koju se Äita)
 // 
-// U main() funkciji dinamièki deklarirajte dva objekta klase CUcenik, 
-// ucitajte njihove podatke sa tipkovnice pomoæu operatora >>,
+// U main() funkciji dinamiÄki deklarirajte dva objekta klase CUcenik, 
+// ucitajte njihove podatke sa tipkovnice pomoÄ‡u operatora >>,
 // te provjerite jesu li jednaki!
 // 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -477,16 +477,16 @@ int main() {
 // {3.} ZADATAK:
 //
 // Zadana je klasa Biljka, koja biljezi podatke o biljci.
-// Napravite klasu GMOBIljka, koja nasljeğuje od klase Biljka,
-// a ima dodatnu èlansku varijablu imena GMO, tipa bool.
+// Napravite klasu GMOBIljka, koja nasljeÄ‘uje od klase Biljka,
+// a ima dodatnu Älansku varijablu imena GMO, tipa bool.
 // 
 // Za klasu GMOBiljka definirajte:
 //  a) default konstruktor, koji postavlja GMO na false
 //  b) kopirni konstruktor
 //  c) operator << koji neka bude vanjska funkcija tipa izlaznog toka,
-//     sa prvim argumentom objektom izlaznog toka na koji se piše,
+//     sa prvim argumentom objektom izlaznog toka na koji se piÅ¡e,
 //     te drugim argumentom objektom klase GMOBiljka koji se zapisuje
-//  d) operator == koji neka bude èlanska funkcija koja prima
+//  d) operator == koji neka bude Älanska funkcija koja prima
 //     jedan argument klase GMOBiljka i tipa je bool
 // 
 // U main() funkciji iskoristite klasu GMOBiljka i isprobajte svu njenu funkcionalnost.
@@ -848,14 +848,14 @@ int main() {
 // Koristeci ovu deklaraciju :
 //		a)	napisite konstruktor, kojim se ujedno alocira dinamicki niz m_array 
 //			i svi elementi postavljaju na nulu.
-//		b)  napišite destruktor koji dealocira niz
+//		b)  napiÅ¡ite destruktor koji dealocira niz
 //		c)	definirajte funkcije SetAt() i GetAt().
 //		d)	definirajte operator= za klasu Niz.
 //		e)  definirajte operator==
 //
 // U funkciji main() upotrebite klasu i sve njene funkcije i operatore.
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
 // ukljucite potrebne biblioteke...
 
@@ -951,7 +951,7 @@ int main() {
 // {2.} ZADATAK:
 //
 //
-// Napišite program kojim se sadraj jedne tekstualne datoteke 
+// NapiÅ¡ite program kojim se sadrÅ¾aj jedne tekstualne datoteke 
 // kopira u drugu, na nacin da se sva pocetna slova rijeci kopiraju kao 
 // velika slova. Ostali znakovi se ne mijenjaju. 
 // Evo primjera originalne datoteke (lijevo) i kopirane datoteke (desno)
@@ -960,7 +960,7 @@ int main() {
 // Dolazi DRUGI kolokvij.						Dolazi DRUGI Kolokvij.
 // 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
 // ukljucite potrebne biblioteke...
 
@@ -1008,9 +1008,9 @@ int main() {
 // {3.} ZADATAK:
 //
 //
-// Deklarirana je klasa Circle, kojom se biljei radijus krunice.
-// Napišite klasu ExtendedCircle koja pored radijusa krunice 
-// sadri podatak o boji krunice m_color tipa int i 
+// Deklarirana je klasa Circle, kojom se biljeÅ¾i radijus kruÅ¾nice.
+// NapiÅ¡ite klasu ExtendedCircle koja pored radijusa kruÅ¾nice 
+// sadrÅ¾i podatak o boji kruÅ¾nice m_color tipa int i 
 // debljini m_thickness tipa int. Ove varijable neka budu
 // privatne, a njihova vrijednost od 0 do 255.
 // U definiranju klase ExtendedCircle obvezno koristite mehanizam 
@@ -1022,13 +1022,13 @@ int main() {
 //
 // U main funkciji deklarirajte jedan objekt klase ExtendedCircle i 
 // sa tipkovnice ucitajte vrijednosti clanskih varijabli.
-// Potom deklarirajte još jedan objekt klase ExtendedCircle
+// Potom deklarirajte joÅ¡ jedan objekt klase ExtendedCircle
 // i iskoristite operator = za postaviti ga na vrijednost prethodnog objekta.
 //
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
-// ukljuèite potrebne biblioteke...
+// ukljuÄite potrebne biblioteke...
 
 #include <iostream>
 using namespace std;
@@ -1125,18 +1125,18 @@ int main()
 // {4.} ZADATAK:
 //
 //
-// Napišite genericku funkciju za odreğivanje maksimalne vrijednosti 
-// imena max(). Funkcija neka bude napisana u obliku predloška, tako 
-// da se moe specijalizirati za razne tipove varijabli. 
-// Funkcija neka prima tri argumenta, a neka vraæa najveæi 
+// NapiÅ¡ite genericku funkciju za odreÄ‘ivanje maksimalne vrijednosti 
+// imena max(). Funkcija neka bude napisana u obliku predloÅ¡ka, tako 
+// da se moÅ¾e specijalizirati za razne tipove varijabli. 
+// Funkcija neka prima tri argumenta, a neka vraÄ‡a najveÄ‡i 
 // od njih. 
 // U main funkciji upotrebite funkciju max() dva puta, jedan put za 
 // varijable tipa double, drug put za int.
 //
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
-// ukljuèite potrebne biblioteke...
+// ukljuÄite potrebne biblioteke...
 
 #include <iostream>
 using namespace std;
@@ -1169,13 +1169,13 @@ int main() {
 // {5.} ZADATAK:
 //
 //
-// Napišite funkciju, kojom se iz jednog vektora V formiraju dva vektora: 
-// V1 treba sadravati neparne, a vektor V2 parne elemente vektora.
+// NapiÅ¡ite funkciju, kojom se iz jednog vektora V formiraju dva vektora: 
+// V1 treba sadrÅ¾avati neparne, a vektor V2 parne elemente vektora.
 // U funkciji vektore V1 i V2 sortirajte pomocu STL funkcije sort().
-// Napišite main() funkciju sa primjerom korištenja funkcije Razdijeli_vektor().
+// NapiÅ¡ite main() funkciju sa primjerom koriÅ¡tenja funkcije Razdijeli_vektor().
 // 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
 // ukljucite potrebne biblioteke...
 
@@ -1270,12 +1270,12 @@ int main() {
 // {1.}ZADATAK:
 //
 //
-// Preradite funkciju kvadrat tako da rezultat kvadriranja argumenta vraæa pomoæu reference. 
+// Preradite funkciju kvadrat tako da rezultat kvadriranja argumenta vraÄ‡a pomoÄ‡u reference. 
 //
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
-// ukljuèite potrebne biblioteke...
+// ukljuÄite potrebne biblioteke...
 
 
 #include<iostream>
@@ -1300,21 +1300,21 @@ int main() {
 // {2.}ZADATAK:
 //
 //
-// Deklarirana je klasa Razlomak, kojom se definira objekt razlomka odreğen cjelobrojnim brojnikom i nazivnikom:
-// Napišite:
+// Deklarirana je klasa Razlomak, kojom se definira objekt razlomka odreÄ‘en cjelobrojnim brojnikom i nazivnikom:
+// NapiÅ¡ite:
 // - podrazumijevani konstruktor koji postavlja brojnik na 0, a nazivnik na 1
 // - kopirni konstruktor
 // - pristupne funkcije za nazivnik
-// - postfix operator ++ koji neka poveæa brojnik za iznos nazivnika
+// - postfix operator ++ koji neka poveÄ‡a brojnik za iznos nazivnika
 // - operator za ispisivanje, koji neka ispisuje dva cijela broja - brojnik i nazivnik odjeljena znakom '/'
-// Napišite primjer funkcije main u kojem æete upotrijebiti klasu Razlomak i njene funkcije.
+// NapiÅ¡ite primjer funkcije main u kojem Ä‡ete upotrijebiti klasu Razlomak i njene funkcije.
 //
 // NAPOMENA : Nazivnik ne smije biti nula!
 //
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
-// ukljuèite potrebne biblioteke...
+// ukljuÄite potrebne biblioteke...
 
 #include<iostream>
 using namespace std;
@@ -1345,7 +1345,7 @@ void Razlomak::SetNazivnik(int naz) {
         m_nazivnik = naz;
     }
     else {
-        cout << "Nedozvoljena vrijednost nazivnika --> nazivnik razlièit od nule!" << endl;
+        cout << "Nedozvoljena vrijednost nazivnika --> nazivnik razliÄit od nule!" << endl;
     }
 }
 
@@ -1387,15 +1387,15 @@ int main() {
 //
 //
 // Napisati funkciju, kojom se iz dva vektora cijelih brojeva V1 i V2 
-// formira jedan vector V, koja treba sadravati sve parne brojeve iz vectora V1 i V2.
+// formira jedan vector V, koja treba sadrÅ¾avati sve parne brojeve iz vectora V1 i V2.
 // U vectoru V brojevi trebaju biti sortirani. Za vector koristite STL biblioteku;
 // Za sortiranje koristite funkciju iz STL biblioteke algoritama. 
 // U main funkciji sami napravite primjer upotrebe funkcije.
 // 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
-// ukljuèite potrebne biblioteke...
+// ukljuÄite potrebne biblioteke...
 
 #include<iostream>
 #include<vector>
@@ -1465,18 +1465,18 @@ int main() {
 // {4.}ZADATAK:
 //
 //
-// Napišite generièku funkciju za zamijenu vrijednosti imena swap. 
-// Funkcija neka bude napisana u obliku predloška, tako da se moe 
+// NapiÅ¡ite generiÄku funkciju za zamijenu vrijednosti imena swap. 
+// Funkcija neka bude napisana u obliku predloÅ¡ka, tako da se moÅ¾e 
 // specijalizirati za razne tipove varijabli. 
-// Funkcija neka prima dva argumenta putem reference èije vrijednosti 
-// meğusobno mijenja. 
+// Funkcija neka prima dva argumenta putem reference Äije vrijednosti 
+// meÄ‘usobno mijenja. 
 // U main funkciji upotrebite funkciju swap dva puta, jedan put za 
 // varijable tipa double, drug put za int.
 //
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
-// ukljuèite potrebne biblioteke...
+// ukljuÄite potrebne biblioteke...
 
 #include<iostream>
 using namespace std;
@@ -1607,17 +1607,17 @@ int main() {
 // {5.}ZADATAK:
 //
 //
-// Napišite program kojim se analizira sadraj neke tekstualne datoteke. Program izvještava: 
+// NapiÅ¡ite program kojim se analizira sadrÅ¾aj neke tekstualne datoteke. Program izvjeÅ¡tava: 
 // a)	koliko je znakova
-// b)	koliko je rijeèi
+// b)	koliko je rijeÄi
 // c)	koliko je redaka teksta
 //
 // zapisano u toj datoteci.
 // 
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
-// ukljuèite potrebne biblioteke...
+// ukljuÄite potrebne biblioteke...
 
 #include<iostream>
 #include<fstream>
@@ -1673,14 +1673,14 @@ int main() {
 // Koristeci ovu deklaraciju :
 //		a)	napisite konstruktor, kojim se ujedno alocira dinamicki niz m_array 
 //			i svi elementi postavljaju na nulu.
-//		b)  napišite destruktor koji dealocira niz
+//		b)  napiÅ¡ite destruktor koji dealocira niz
 //		c)	definirajte funkcije SetAt() i GetAt().
 //		d)	definirajte operator= za klasu Niz.
 //		e)  definirajte operator==
 //
 // U funkciji main() upotrebite klasu i sve njene funkcije i operatore.
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-// Ne mijenjajte ništa iznad ove linije!
+// Ne mijenjajte niÅ¡ta iznad ove linije!
 
 // ukljucite potrebne biblioteke...
 
